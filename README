@@ -1,0 +1,29 @@
+# spmetro
+
+It is a Prolog script which is intended to find the fastest path between
+two stations in São Paulo Subway System, given an hour of a day.
+
+It is known that there are times of the day which it is crowded and taking
+a train can take longer than at normal conditions. Also, it should
+consider the time of swapping lines. Some stations are bigger and so, the
+time spent will be longer.
+
+# Usage
+
+    $ swipl -f spmetro.pl 
+    % /home/gustavo/Projetos/prolog/spmetro/spmetro.pl compiled 0.00 sec, 32 clauses
+    Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.0.1)
+    Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+    SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+    and you are welcome to redistribute it under certain conditions.
+    Please visit http://www.swi-prolog.org for details.
+    
+    For help, use ?- help(Topic). or ?- apropos(Word).
+    
+    ?- goes_to(station(jabaquara, azul), station(brigadeiro, verde), Path, Duration).
+    
+    Path = [station(jabaquara, azul), station(conceicao, azul), station(sao_judas, azul), station(saude, azul), station(pca_arvore, azul), station(santa_cruz, azul), station(vila_mariana, azul), station(ana_rosa, azul), station(..., ...)|...],
+    Duration = 53 ;
+    Path = [station(jabaquara, azul), station(conceicao, azul), station(sao_judas, azul), station(saude, azul), station(pca_arvore, azul), station(santa_cruz, azul), station(vila_mariana, azul), station(ana_rosa, azul), station(..., ...)|...],
+    Duration = 50 ;
+    false.
